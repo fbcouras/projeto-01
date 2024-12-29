@@ -8,5 +8,5 @@ module.exports.sum = (a, b) => {
     throw new Error('Parameters must be numbers');
   }
 
-  return +a + +b;
+  return num1 + num2;
 };
