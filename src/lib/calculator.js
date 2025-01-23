@@ -1,5 +1,3 @@
-const { parse } = require('path');
-
 module.exports.sum = (a, b) => {
   const num1 = parseInt(a, 10);
   const num2 = parseInt(b, 10);
