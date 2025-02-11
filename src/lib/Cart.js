@@ -1,9 +1,9 @@
 const find = require('lodash/find');
 const remove = require('lodash/remove');
-const money = require('dinero.js');
+const Money = require('dinero.js');
 
-money.defaultCurrency = 'BRL';
-money.defaultPrecision = 2;
+Money.defaultCurrency = 'BRL';
+Money.defaultPrecision = 2;
 
 module.exports.Cart = class {
   items = [];
