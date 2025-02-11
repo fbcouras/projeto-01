@@ -48,4 +48,28 @@ describe('Cart', () => {
       expect(cart.getTotal()).toEqual(41872);
     });
   });
+
+  describe('checkout()', () => {
+    it('should return an object with the total and the list of items', () => {
+      cart.add({ product, quantity: 2 });
+      cart.add({ product: product2, quantity: 3 });
+
+      expect(cart.checkout()).toMatchSnapshot();
+    });
+
+    it('should return an object with the total and the list of items when summary() is executed', () => {
+      cart.add({ product, quantity: 2 });
+      cart.add({ product: product2, quantity: 3 });
+
+      expect(cart.summary()).toMatchSnapshot();
+      expect(cart.getTotal()).toBeGreaterThan(0);
+    });
+
+    it('should be execute checkout() the cart is reset', () => {
+      cart.add({ product, quantity: 2 });
+      cart.checkout();
+
+      expect(cart.getTotal()).toEqual(0);
+    });
+  });
 });
