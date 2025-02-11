@@ -1,5 +1,6 @@
 const find = require('lodash/find');
 const remove = require('lodash/remove');
+const money = require('dinero.js');
 
 module.exports.Cart = class {
   items = [];
